@@ -1,4 +1,5 @@
 <template>
+    <vue-final-modal v-model="showModal"> Modal Content Here </vue-final-modal>
     <form @submit.prevent="save">
         <div class="form-group">
             <label for="proverbe">Proverbe</label>
@@ -44,7 +45,7 @@ export default {
     methods: {
         loadProverbes() {
             console.log("LoadTasks() calling...");
-            var page = "http://proverbia.herokuapp.com/api/proverbes";
+            var page = "http://127.0.0.1:8000/api/proverbes";
             axios.get(page).then(({ data }) => {
                 console.log(data);
                 this.result = data;
@@ -59,7 +60,7 @@ export default {
         },
         savedata() {
             axios
-                .post("http://proverbia.herokuapp.com/api/save", this.proverbe)
+                .post("http://127.0.0.1:8000/api/save", this.proverbe)
                 .then(({ data }) => {
                     alert("saved!");
                 });
