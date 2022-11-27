@@ -95,7 +95,8 @@ export default {
     methods: {
         loadProverbes() {
             console.log("LoadTasks() calling...");
-            var page = "http://127.0.0.1:8000/api/randomproverbes";
+            var page =
+                "http://http://proverbia.herokuapp.com/api/randomproverbes";
             axios.get(page).then(({ data }) => {
                 console.log(data);
                 this.result = data;

@@ -153,7 +153,7 @@ export default {
         },
         loadProverbes() {
             console.log("LoadTasks() calling...");
-            var page = "http://127.0.0.1:8000/api/proverbes";
+            var page = "http://http://proverbia.herokuapp.com/api/proverbes";
             axios.get(page).then(({ data }) => {
                 console.log(data);
                 this.result = data;
@@ -163,14 +163,18 @@ export default {
             this.savedata();
         },
         savedata() {
-            axios.post("http://127.0.0.1:8000/api/save", this.proverbe);
+            axios.post(
+                "http://http://proverbia.herokuapp.com/api/save",
+                this.proverbe
+            );
         },
         edit(proverbe) {
             this.proverbe = proverbe;
         },
         updateData() {
             var editrecords =
-                "http://127.0.0.1:8000/api/update/" + this.proverbe.id;
+                "http://http://proverbia.herokuapp.com/api/update/" +
+                this.proverbe.id;
             axios.put(editrecords, this.proverbe).then(({ data }) => {
                 this.proverbe.proverbe = "";
                 this.proverbe.auteur = "";
@@ -179,7 +183,7 @@ export default {
             });
         },
         remove(proverbe) {
-            var url = `http://127.0.0.1:8000/api/delete/${proverbe.id}`;
+            var url = `http://http://proverbia.herokuapp.com/api/delete/${proverbe.id}`;
             axios.delete(url);
             alert("Proverbe supprimé");
             this.loadProverbes();
