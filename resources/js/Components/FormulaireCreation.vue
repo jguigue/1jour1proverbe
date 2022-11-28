@@ -45,7 +45,7 @@ export default {
     methods: {
         loadProverbes() {
             console.log("LoadTasks() calling...");
-            var page = "http://proverbia.herokuapp.com/api/proverbes";
+            var page = "https://proverbia.herokuapp.com/api/proverbes";
             axios.get(page).then(({ data }) => {
                 console.log(data);
                 this.result = data;
