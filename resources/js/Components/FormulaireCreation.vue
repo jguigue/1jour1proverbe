@@ -60,7 +60,7 @@ export default {
         },
         savedata() {
             axios
-                .post("http://proverbia.herokuapp.com/api/save", this.proverbe)
+                .post("https://proverbia.herokuapp.com/api/save", this.proverbe)
                 .then(({ data }) => {
                     alert("saved!");
                 });
