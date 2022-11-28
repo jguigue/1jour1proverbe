@@ -45,7 +45,7 @@ export default {
     methods: {
         loadProverbes() {
             console.log("LoadTasks() calling...");
-            var page = "https://proverbia.herokuapp.com/api/proverbes";
+            var page = "//proverbia.herokuapp.com/api/proverbes";
             axios.get(page).then(({ data }) => {
                 console.log(data);
                 this.result = data;
@@ -60,7 +60,7 @@ export default {
         },
         savedata() {
             axios
-                .post("https://proverbia.herokuapp.com/api/save", this.proverbe)
+                .post("//proverbia.herokuapp.com/api/save", this.proverbe)
                 .then(({ data }) => {
                     alert("saved!");
                 });
