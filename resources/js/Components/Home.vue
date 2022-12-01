@@ -47,7 +47,7 @@ import { Link } from "@inertiajs/inertia-vue3";
     padding-right: 5vw;
 }
 .bulle {
-    background: rgba(192, 3, 3, 0.36);
+    background: rgba(0, 0, 0, 0.29);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(44, 10, 179, 0.1);
     backdrop-filter: blur(100px);
